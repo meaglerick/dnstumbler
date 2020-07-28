@@ -6,14 +6,14 @@ A DNS randomizer, that can operate in listener or sender mode. Just a random pro
 
 ## Typical Usage
   ### Sender
-    `sudo python3 dnstumbler.py -d <upstream DNS server> -a '<apexdomain>'`
+    sudo python3 dnstumbler.py -d <upstream DNS server> -a '<apexdomain>'
 
-    `sudo python3 dnstumbler.py -d 1.1.1.1 -a 'example.com'
+    sudo python3 dnstumbler.py -d 1.1.1.1 -a 'example.com'
 
   ### Listener
-    `sudo python3 dnstumbler.py --listener -a '<apexdomain>' -i '<interface>'`
+    sudo python3 dnstumbler.py --listener -a '<apexdomain>' -i '<interface>'
 
-    `sudo python3 dnstumbler.py --listener -a 'example.com' -i 'ens33'`
+    sudo python3 dnstumbler.py --listener -a 'example.com' -i 'ens33'
   
   ### Help
   python3 dnstumbler.py -h
