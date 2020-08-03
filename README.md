@@ -23,4 +23,5 @@ A DNS randomizer, that can operate in listener or sender mode. Just a random pro
 #### Random note
 
   The native TCP/IP stack will interfere with traffic from scapy because of "unsolicited" DNS requests. Block output "ICMP unreachable" messages with IPTABLES.
-    sudo iptables -A OUTPUT -p ICMP --icmp-type port-unreachable -j DROP
+  
+    `sudo iptables -A OUTPUT -p ICMP --icmp-type port-unreachable -j DROP`
