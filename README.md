@@ -22,21 +22,5 @@ A DNS randomizer, that can operate in listener or sender mode. Just a random pro
 
 #### Random note
 
-  If you're running this on debian/ubuntu that runs systemd-resolv...disable it. Otherwise it just interferes with the normal DNS traffic.
-  How to disable systemd-resolved in Ubuntu
-
-  Disable and stop the systemd-resolved service:
-
-    sudo systemctl disable systemd-resolved.service
-    sudo systemctl stop systemd-resolved
-
-  Then put the following line in the [main] section of your /etc/NetworkManager/NetworkManager.conf:
-
-    dns=default
-  Delete the symlink /etc/resolv.conf
-
-    rm /etc/resolv.conf
-  Restart network-manager
-
-    sudo service network-manager restart
-  https://gist.github.com/zoilomora/f7d264cefbb589f3f1b1fc2cea2c844c
+  The native TCP/IP stack will interfere with traffic from scapy because of "unsolicited" DNS requests. Block output "ICMP unreachable" messages with IPTABLES.
+    sudo iptables -A OUTPUT -p ICMP --icmp-type port-unreachable -j DROP
